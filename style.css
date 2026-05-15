@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    font-family: 'Press Start 2P', cursive;
+    overflow: hidden;
+}
+
+#gameCanvas {
+    width: 736px;
+    height: 245px;
+    border-bottom: 5px solid #333;
+    background-image: url('building.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-color: #87CEEB;
+    position: relative;
+    overflow: hidden;
+}
+
+#score {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 14px;
+    color: #fff;
+    z-index: 30;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #deff9a;
+    z-index: 20;
+    text-align: center;
+}
+
+.game-over-title {
+    color: #ff4757;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.restart-hint {
+    font-size: 10px;
+    margin-top: 20px;
+    color: white;
+}
+
+#runner {
+    width: 60px;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    background-image: url('man.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10;
+}
+
+.obstacle {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    bottom: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 5;
+}
+
+.dog-size {
+    width: 80px !important;
+    height: 80px !important;
+    bottom: -35px !important;
+}
+
+.banana-size {
+    width: 45px !important;
+    height: 45px !important;
+    bottom: -10px !important;
+}
+
+.animate-jump {
+    animation: jump 0.5s ease-out;
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 120px;
+    }
+
+    60% {
+        bottom: 120px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+.hidden {
+    display: none !important;
+}

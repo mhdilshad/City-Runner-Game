@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>City Runner</title>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1 style="color: white; text-align: center;">City Runner</h1>
+
+        <div id="gameCanvas">
+            <div id="score">SCORE: 0</div>
+
+            <div id="startScreen" class="overlay">
+                <p>PRESS SPACE TO START</p>
+            </div>
+
+            <div id="gameOverScreen" class="overlay hidden">
+                <h1 class="game-over-title">GAME OVER</h1>
+                <p id="finalScoreText">SCORE: 0</p>
+                <p class="restart-hint">PRESS SPACE TO START AGAIN</p>
+            </div>
+
+            <div id="runner"></div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
