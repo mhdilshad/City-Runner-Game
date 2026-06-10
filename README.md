@@ -1,8 +1,3 @@
-# City Runner
-#### Video Demo: https://youtu.be/9yee5QZ_ycc?si=mQRcgSMAT9lJ771r
-#### Description:
-
-
 # CITY RUNNER: AN URBAN SURVIVAL ADVENTURE
 
 ## Project Overview
@@ -67,6 +62,8 @@ During post-collision testing, having the active live score display remaining in
 3.  **Maneuver:** Press the **Spacebar** while running to leap over incoming obstacles.
 4.  **Survival:** Pass as many obstacles as possible. Each hazard successfully cleared past the left edge increases your current score by **1 Point**.
 5.  **Restart:** After a collision, press the **Spacebar** to immediately reset the board and try to beat your saved **High Score**!
+
+#### Video Demo: https://youtu.be/9yee5QZ_ycc?si=mQRcgSMAT9lJ771r
 
 ---
 
