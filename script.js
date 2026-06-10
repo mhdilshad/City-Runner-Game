@@ -4,6 +4,7 @@ const scoreElement = document.getElementById("score");
 const startScreen = document.getElementById("startScreen");
 const gameOverScreen = document.getElementById("gameOverScreen");
 const finalScoreText = document.getElementById("finalScoreText");
+const highScoreText = document.getElementById("highScoreText");
 
 let score = 0;
 let isGameOver = false;
@@ -68,10 +69,10 @@ function createObstacle() {
     }
 
     obstacle.style.backgroundImage = `url('${type}')`;
-    obstacle.style.left = "736px"; // Start at the right edge of the canvas
+    obstacle.style.left = "960px"; // Start at the new right edge of the expanded canvas
     gameCanvas.appendChild(obstacle);
 
-    let obstaclePos = 736;
+    let obstaclePos = 960;
     let moveTimer = setInterval(() => {
         if (isGameOver) {
             clearInterval(moveTimer);
@@ -85,7 +86,7 @@ function createObstacle() {
         let runnerBottom = parseInt(window.getComputedStyle(runner).getPropertyValue("bottom"));
 
         // Collision Logic: Detects if runner hits the obstacle
-        if (obstaclePos > 30 && obstaclePos < 80 && runnerBottom <= 40) {
+        if (obstaclePos > 30 && obstaclePos < 80 && runnerBottom <= 55) {
             endGame();
         }
 
@@ -109,6 +110,9 @@ function startGame() {
     score = 0;
     scoreElement.innerHTML = "SCORE: 0";
 
+    // Show the corner score when the game starts
+    scoreElement.classList.remove("hidden");
+
     startScreen.classList.add("hidden");
     gameOverScreen.classList.add("hidden");
 
@@ -121,7 +125,18 @@ function endGame() {
     gameStarted = false;
     clearTimeout(obstacleTimer);
 
+    // Hide the corner score when the game is over
+    scoreElement.classList.add("hidden");
+
+    // High Score tracking via localStorage
+    let currentHighScore = localStorage.getItem("cityRunnerHighScore") || 0;
+    if (score > currentHighScore) {
+        currentHighScore = score;
+        localStorage.setItem("cityRunnerHighScore", currentHighScore);
+    }
+
     finalScoreText.innerHTML = "SCORE: " + score;
+    highScoreText.innerHTML = "HIGH SCORE: " + currentHighScore;
     gameOverScreen.classList.remove("hidden");
 }
 
