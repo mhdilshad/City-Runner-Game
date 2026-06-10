@@ -11,12 +11,12 @@ body {
 }
 
 #gameCanvas {
-    width: 736px;
-    height: 245px;
+    width: 960px;
+    height: 360px;
     border-bottom: 5px solid #333;
     background-image: url('building.png');
     background-repeat: repeat-x;
-    background-size: contain;
+    background-size: cover;
     background-color: #87CEEB;
     position: relative;
     overflow: hidden;
@@ -53,6 +53,12 @@ body {
     margin-bottom: 10px;
 }
 
+#highScoreText {
+    font-size: 14px;
+    color: #fffa65;
+    margin-top: 10px;
+}
+
 .restart-hint {
     font-size: 10px;
     margin-top: 20px;
@@ -60,8 +66,8 @@ body {
 }
 
 #runner {
-    width: 60px;
-    height: 70px;
+    width: 70px;
+    height: 82px;
     position: absolute;
     bottom: 0;
     left: 50px;
@@ -72,8 +78,8 @@ body {
 }
 
 .obstacle {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     position: absolute;
     bottom: 0;
     background-size: contain;
@@ -82,15 +88,15 @@ body {
 }
 
 .dog-size {
-    width: 80px !important;
-    height: 80px !important;
-    bottom: -35px !important;
+    width: 95px !important;
+    height: 95px !important;
+    bottom: -40px !important;
 }
 
 .banana-size {
-    width: 45px !important;
-    height: 45px !important;
-    bottom: -10px !important;
+    width: 55px !important;
+    height: 55px !important;
+    bottom: -12px !important;
 }
 
 .animate-jump {
@@ -103,11 +109,11 @@ body {
     }
 
     40% {
-        bottom: 120px;
+        bottom: 165px; 
     }
 
     60% {
-        bottom: 120px;
+        bottom: 165px;
     }
 
     100% {
